@@ -1,0 +1,132 @@
+-   method: IntermediateInt
+    mean: 0.014117784216853762
+    stats:
+        iqr: 1.6382999660884134e-06
+        median: 0.01412080605000483
+    args:
+        dtype_i: torch.int16
+        dtype_f: torch.float16
+        implicit: false
+        early_conversion: false
+        rounding: false
+
+-   method: IntermediateInt
+    mean: 0.015248168905488298
+    stats:
+        iqr: 1.4359000147130818e-06
+        median: 0.015242967700010011
+    args:
+        dtype_i: torch.int16
+        dtype_f: torch.float32
+        implicit: false
+        early_conversion: false
+        rounding: false
+
+-   method: FloatAndBack
+    mean: 0.016734784025334192
+    stats:
+        iqr: 2.8773999929364302e-06
+        median: 0.01673288669999238
+    args:
+        dtype_f: torch.float16
+
+-   method: FloatAndBack
+    mean: 0.01804362012589991
+    stats:
+        iqr: 1.4767000038780342e-06
+        median: 0.018043434799983514
+    args:
+        dtype_f: torch.float32
+
+-   method: IntermediateInt
+    mean: 0.019294392789228232
+    stats:
+        iqr: 2.1083250089717898e-06
+        median: 0.01929466389999561
+    args:
+        dtype_i: torch.int32
+        dtype_f: torch.float16
+        implicit: false
+        early_conversion: false
+        rounding: false
+
+-   method: IntermediateInt
+    mean: 0.020800490114050278
+    stats:
+        iqr: 1.594200011823671e-06
+        median: 0.02080221999999594
+    args:
+        dtype_i: torch.int32
+        dtype_f: torch.float32
+        implicit: false
+        early_conversion: false
+        rounding: false
+
+-   method: IntermediateInt
+    mean: 0.030286448003613825
+    stats:
+        iqr: 1.6946500181781732e-06
+        median: 0.030287073199997395
+    args:
+        dtype_i: torch.int64
+        dtype_f: torch.float16
+        implicit: false
+        early_conversion: false
+        rounding: false
+
+-   method: IntermediateInt
+    mean: 0.032276718321796606
+    stats:
+        iqr: 2.132400004489776e-06
+        median: 0.032277120850017126
+    args:
+        dtype_i: torch.int64
+        dtype_f: torch.float32
+        implicit: false
+        early_conversion: false
+        rounding: false
+
+-   method: IntermediateInt
+    mean: 0.039623079018752345
+    stats:
+        iqr: 0.0001647623750272928
+        median: 0.039634483600025305
+    args:
+        dtype_i: torch.int16
+        dtype_f: torch.float64
+        implicit: false
+        early_conversion: false
+        rounding: false
+
+-   method: IntermediateInt
+    mean: 0.04486430843750212
+    stats:
+        iqr: 5.261099988732032e-06
+        median: 0.04486347585000203
+    args:
+        dtype_i: torch.int32
+        dtype_f: torch.float64
+        implicit: false
+        early_conversion: false
+        rounding: false
+
+-   method: FloatAndBack
+    mean: 0.05058965006400104
+    stats:
+        iqr: 2.792500004039633e-06
+        median: 0.05058929990000252
+    args:
+        dtype_f: torch.float64
+
+-   method: IntermediateInt
+    mean: 0.05632541943110988
+    stats:
+        iqr: 5.8826999975308825e-06
+        median: 0.05632467360001101
+    args:
+        dtype_i: torch.int64
+        dtype_f: torch.float64
+        implicit: false
+        early_conversion: false
+        rounding: false
+

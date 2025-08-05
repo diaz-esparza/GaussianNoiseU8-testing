@@ -24,14 +24,16 @@ class FloatAndBack(GaussianNoiseU8):
     def __init__(
         self,
         dtype_f: torch.dtype,
+        rounding: bool = False,
     ) -> None:
         super().__init__()
         if not dtype_f.is_floating_point:
             raise ValueError(f"dtype_f is expected to be float, got {dtype_f=}")
 
-        self.to_float = v2.ToDtype(dtype_f, scale=True)
-        self.to_uint8 = v2.ToDtype(torch.uint8, scale=True)
+        self.to_float = v2.ToDtype(dtype_f, scale=False)
+        self.to_uint8 = v2.ToDtype(torch.uint8, scale=False)
         self.dtype_f = dtype_f
+        self.rounding = rounding
 
     def __call__(
         self,
@@ -45,11 +47,17 @@ class FloatAndBack(GaussianNoiseU8):
 
         inpt_f = self.to_float(inpt)
 
-        noise = mean + torch.randn_like(inpt, dtype=self.dtype_f) * sigma
-        out = inpt_f + noise
+        noise = (mean * 255) + torch.randn_like(inpt, dtype=self.dtype_f) * (
+            sigma * 255
+        )
+
+        if self.rounding:
+            out = (inpt_f + noise).round()
+        else:
+            out = inpt_f + noise
 
         if clip:
-            out = torch.clamp(out, 0, 1)
+            out = torch.clamp(out, 0, 255)
         return self.to_uint8(out)
 
 

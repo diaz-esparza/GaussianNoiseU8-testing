@@ -22,7 +22,7 @@ CONFIGS: list[tuple[str, type[GaussianNoiseU8], dict[str, Any]]] = [
         (
             f"FAB{str(dtype_f)[-2:]}",
             FloatAndBack,
-            {"dtype_f": dtype_f},
+            {"dtype_f": dtype_f, "rounding": True},
         )
         for dtype_f in [torch.float32, torch.float16]
     ],
@@ -189,6 +189,8 @@ def main():
             break
     else:
         raise AssertionError()
+
+    torch.manual_seed(33)
     plt.imshow(
         np.moveaxis(
             transform_cls(**kwargs)(
@@ -208,6 +210,8 @@ def main():
             break
     else:
         raise AssertionError()
+
+    torch.manual_seed(33)
     plt.imshow(
         np.moveaxis(
             transform_cls(**kwargs)(
